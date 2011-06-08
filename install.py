@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # shameless port of https://github.com/aniero/dotfiles/blob/master/install.rb
 
 from glob import glob
@@ -19,10 +20,3 @@ for f in glob('*'):
     target = normpath(join(home, '.%s'%f))
     src = normpath(join(getcwd(), f))
     install_sym(src, target)
-
-# we need a symlink for our ssh stuff.
-# for now, just hardcode it to ~/.secrets/ssh
-ssh_dir =  normpath(join(home, '.ssh'))
-src = normpath(join(home, ".secrets/ssh"))
-install_sym(src, ssh_dir)
-

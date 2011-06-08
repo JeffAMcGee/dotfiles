@@ -1,4 +1,0 @@
-tell application "Terminal"
-	activate
-	do script ""
-end tell

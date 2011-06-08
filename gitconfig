@@ -1,14 +1,15 @@
 [user]
-	name = Jeremy Kelley
-	email = jeremy@collectivelabs.com
+    email = JeffAMcGee@gmail.com
+    name = Jeff McGee
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    branch = auto
+    status = auto
+    ui = auto
 
 [alias]
-	lor = log origin/master..
+    lor = log origin/master..
     wc = whatchanged
     lsr = ls-remote --heads origin
     st = status

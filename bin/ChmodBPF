@@ -1,0 +1,4 @@
+#! /bin/sh
+
+sudo chgrp admin /dev/bpf*
+sudo chmod g+rw /dev/bpf*

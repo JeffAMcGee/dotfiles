@@ -1,28 +1,137 @@
-set nomodeline " do. not. want.
-set nocompatible " old vi is old.
+" An example for a vimrc file.
+"
+" Maintainer:   Bram Moolenaar <Bram@vim.org>
+" Last change:  2001 Jul 18
+"
+" To use it, copy it to
+"     for Unix and OS/2:  ~/.vimrc
+"             for Amiga:  s:.vimrc
+"  for MS-DOS and Win32:  $VIM\_vimrc
+"           for OpenVMS:  sys$login:.vimrc
 
-set vb " shhhh
-
-:syntax on
-
-if has("gui_running")
-	:color zenburn
-	" let g:zenburn_force_dark_Background=1
-    set guioptions=egmrt
-else
-	:color zellner
+" When started as "evim", evim.vim will already have done these settings.
+if v:progname =~? "evim"
+  finish
 endif
 
-set sw=4 sts=4 ts=4
-:au BufEnter *.py set tw=78 ts=4 sw=4 sta et sts=4 ai
-:au BufEnter *.js set sw=2 sts=2 ts=2 et
-:au BufEnter *.rb set sw=2 ts=2 et ai
-:au BufEnter *.yml set sw=2 ts=2 et ai
-:au BufEnter *.haml set sw=2 ts=2 et ai
-:au BufEnter *.html   set sw=2 sts=2 ts=2 et
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
-:au BufEnter *.java set sw=4 sts=4 et ai
-:au BufEnter *.js set sw=2 sts=2 et ai
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set autoindent          " always set autoindenting on
+set nobackup            " don't keep a backup file
+set history=50          " keep 50 lines of command line history
+set ruler               " show the cursor position all the time
+set showcmd             " display incomplete commands
+set incsearch           " do incremental searching
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+set fileformats=unix,dos,mac
+
+" Make p in Visual mode replace the selected text with the "" register.
+vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
+
+" This is an alternative that also works in block mode, but the deleted
+" text is lost and it only works for putting the current register.
+"vnoremap p "_dp
+
+if &term =~ "vt100" 
+	if has("terminfo")
+		set t_Co=8                              
+		set t_Sf=[3%p1%dm 
+		set t_Sb=[4%p1%dm
+	else
+		set t_Co=8
+		set t_Sf=[3%dm
+		set t_Sb=[4%dm
+	endif
+endif
+
+"quit your yapping
+set vb t_vb=
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+endif
+
+if has("gui_running")
+	set guifont=Monospace\ 10 guioptions-=T	guiheadroom=4
+endif
+colorscheme darkblue
+
+set hlsearch
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+ 
+  " For all text files set 'textwidth' to 78 characters.
+  " autocmd FileType text setlocal textwidth=78
+  autocmd FileType html,xhtml,htmldjango setlocal shiftwidth=2 tabstop=2 textwidth=80
+  autocmd FileType c,cpp,php,perl setlocal foldmethod=indent foldminlines=5 foldnestmax=5
+  autocmd FileType c,cpp setlocal makeprg=make\ %<.o
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+endif " has("autocmd")
+
+augroup filetypedetect 
+  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+augroup END 
+
+"arrow keys for dvorak
+noremap d h
+noremap h j
+noremap t k
+noremap n l
+noremap j t
+noremap k d
+noremap l n
+
+"swap forward and backward
+noremap <C-F> <C-B>
+noremap <C-B> <C-F>
+
+noremap db Oimport ipdb; ipdb.set_trace()<Esc>:w<Return>
+
+"jump between windows
+noremap <C-H> <C-W>j<C-W>_
+noremap <C-T> <C-W>k<C-W>_
+noremap <C-D> <C-W>h
+noremap <C-N> <C-W>l
+set winminheight=0
+
+
+set tags=tags;/
+set wrap
+
+" The next 50 lines or so were stolen from nod.
+"
+set nomodeline
 
 augroup mkd
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -49,18 +158,6 @@ endfunction
 " inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 nmap <Tab> <C-R>=SuperCleverTab()<cr>
 
-" tab navigation like ffox
-nmap <S-tab> :tabprevious<cr>
-nmap <C-tab> :tabnext<cr>
-map <S-tab> :tabprevious<cr>
-map <C-tab> :tabnext<cr>
-imap <S-tab> <ESC>:tabprevious<cr>i
-imap <C-tab> <ESC>:tabnext<cr>i
-" nmap <C-t> :tabnew<cr>
-" imap <C-t> <ESC>:tabnew<cr>
-
-set tags+=./tags
-
 " trailing whitespace kills puppies
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -77,5 +174,4 @@ cs add ~/.vim/tags/tornado.cscope
 cs add ~/.vim/tags/mogo.cscope
 cs add ~/.vim/tags/python.cscope
 set cscopeverbose
-
 

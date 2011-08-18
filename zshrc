@@ -1,7 +1,7 @@
 #source /etc/zsh/zshrc
 
 export PS1=$'\n%{\e[31m%}%n:%{\e[01;32m%}%~%{\e[00m%}\n>'
-export PATH="/opt/subversion/bin:/Users/jeff/.maven-2.2.1/bin:/Users/jeff/bin:/Applications/MAMP/Library/bin:/opt/subversion/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/mysql/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="${HOME}/bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
 export MANPATH="/opt/local/share/man:${MANPATH}"
 export PYTHONPATH="/usr/local/lib/python2.6/site-packages/:${PYTHONPATH}"
 unset ROOTPATH

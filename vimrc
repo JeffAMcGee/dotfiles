@@ -85,10 +85,9 @@ if has("autocmd")
   filetype plugin indent on
  
   " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
-  autocmd FileType html,xhtml,htmldjango setlocal shiftwidth=2 tabstop=2 textwidth=80
-  autocmd FileType c,cpp,php,perl setlocal foldmethod=indent foldminlines=5 foldnestmax=5
-  autocmd FileType c,cpp setlocal makeprg=make\ %<.o
+  autocmd FileType text setlocal textwidth=80
+  autocmd FileType html,xhtml,htmldjango,javascript setlocal sw=2 ts=2 tw=80
+  "autocmd FileType c,cpp,php,perl setlocal foldmethod=indent foldminlines=5 foldnestmax=5
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler

@@ -69,9 +69,9 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 if has("gui_running")
-	set guifont=Monospace\ 10 guioptions-=T	guiheadroom=4
+	set guifont=Inconsolata-dz:h11 guioptions-=T	guiheadroom=4
 endif
-colorscheme darkblue
+colorscheme nightVision
 
 set hlsearch
 

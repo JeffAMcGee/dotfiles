@@ -1,8 +1,8 @@
 #source /etc/zsh/zshrc
 
 export PS1=$'\n%{\e[31m%}%n:%{\e[01;32m%}%~%{\e[00m%}\n>'
+PATH="${HOME}/bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-PATH="/Users/jeff/bin:${PATH}"
 PATH="/usr/local/bin:${PATH}"
 PATH="/Users/jeff/mongodb-osx-x86_64-1.8.1/bin:${PATH}"
 export PATH

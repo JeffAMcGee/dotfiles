@@ -1,9 +1,12 @@
 #source /etc/zsh/zshrc
 
 export PS1=$'\n%{\e[31m%}%n:%{\e[01;32m%}%~%{\e[00m%}\n>'
-export PATH="/opt/subversion/bin:/Users/jeff/.maven-2.2.1/bin:/Users/jeff/bin:/Applications/MAMP/Library/bin:/opt/subversion/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/mysql/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH="/Users/jeff/bin:${PATH}"
+PATH="/usr/local/bin:${PATH}"
+PATH="/Users/jeff/mongodb-osx-x86_64-1.8.1/bin:${PATH}"
+export PATH
 export MANPATH="/opt/local/share/man:${MANPATH}"
-export PYTHONPATH="/usr/local/lib/python2.6/site-packages/:${PYTHONPATH}"
 unset ROOTPATH
 export EDITOR=/usr/bin/vim
 export VISUAL="/Users/jeff/bin/mvim -f"
@@ -16,8 +19,6 @@ export CVS_RSH=ssh
 export LESS="-R"
 export CLICOLOR_FORCE=1
 export JYTHON_HOME=/Users/jeff/jython
-export HADOOP_HOME=/Users/jeff/hadoop-0.20.2
-export HADOOP_CONF=/Users/jeff/hadoop-0.20.2/conf
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
 
 setopt correctall
@@ -79,15 +80,16 @@ alias -- gwd='cd "`/bin/pwd`"'
 alias -- ...='cd ../..'
 alias -- ....='cd ../../..'
 alias -- .....='cd ../../../..'
-alias l='ls -alFG'
 alias lsd='l -d */'
 alias md='nocorrect mkdir -p'
 alias mv='nocorrect mv'
 alias mloc='mdfind -name'
-alias o='less'
+alias o='less -r'
 alias pa='ps -Af'
 alias pag='ps -Af|grep '
 alias paf='ps -Af --forest '
+alias ap='ack --python'
+alias ah='ack --html'
 alias q='exit'
 alias rd='rmdir'
 alias v='mvim -o'
@@ -114,17 +116,33 @@ alias wg="wget"
 alias c="noglob calc"
 alias mnt="mount |column -t"
 
+case `uname` in
+  Darwin)
+    alias l='ls -alFG'
+    ;;
+  Linux)
+    alias l='ls -alF --color=always'
+    ;;
+esac
+
 if [ -x /usr/games/fortune ] ; then
 	echo
 	/usr/games/fortune
 	echo
 fi
 
-#setterm -blength 0
+# python virtualenvwrapper
+# http://www.doughellmann.com/docs/virtualenvwrapper/
+vw=`which virtualenvwrapper.sh 2>/dev/null`
+if [[ -n "$vw" ]] ; then
+    export PIP_RESPECT_VIRTUALENV=true
+    export WORKON_HOME=$HOME/virtualenv
+    source "$vw"
+    export PIP_VIRTUALENV_BASE=$WORKON_HOME
+fi
+alias mve="mkvirtualenv --no-site-packages"
 
-#c() {
-#	print $(($1))
-#}
+#setterm -blength 0
 
 chpwd() {
 	[[ -t 1 ]] || return

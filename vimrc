@@ -69,7 +69,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 if has("gui_running")
-	set guifont=Monospace\ 10 guioptions-=T	guiheadroom=4
+	set guifont=Inconsolata:h13 guioptions-=T	guiheadroom=4
 endif
 colorscheme darkblue
 
@@ -116,7 +116,7 @@ noremap l n
 noremap <C-F> <C-B>
 noremap <C-B> <C-F>
 
-noremap db Oimport ipdb; ipdb.set_trace()<Esc>:w<Return>
+noremap <D-d> Oimport ipdb; ipdb.set_trace()<Esc>:w<Return>
 
 "jump between windows
 noremap <C-H> <C-W>j<C-W>_

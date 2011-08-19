@@ -71,7 +71,7 @@ endif
 if has("gui_running")
 	set guifont=Inconsolata-dz:h12 guioptions-=T	guiheadroom=4
 endif
-colorscheme nightVision
+colorscheme vj
 
 set hlsearch
 

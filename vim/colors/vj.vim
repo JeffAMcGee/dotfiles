@@ -74,15 +74,6 @@ hi Type	guifg=gold3 gui=bold ctermfg=3
 "hi Error		
 hi Todo guifg=yellow3 guibg=blue3 gui=bold
 
-if version > 580
-    " no guarantees for version 5.8 and below, but this makes it stop
-    " complaining
-    hi clear
-    if exists("syntax_on")
-		syntax reset
-    endif
-endif
-
 if &background == "dark"
 hi Normal       guifg=#a0b4e0 guibg=#11121a   "1a1823
 hi NonText      guifg=#382920 guibg=bg

@@ -1,16 +1,14 @@
 autodetach on
 startup_message off
 
-deflogin on
-
 vbell off
 
 defscrollback 2048
 
-hardstatus alwayslastline "%{=b} %=%{b}%w %{kG}%C%A"
+hardstatus alwayslastline "%{=b} %=%{b}%w %{kG} %H"
 
-screen -t ipy zsh
 screen -t srv zsh
+screen -t sh zsh
 screen -t vi zsh
-screen -t srv zsh
+screen -t ipy zsh
 

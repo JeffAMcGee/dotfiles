@@ -2,14 +2,14 @@
 
 export PS1=$'\n%{\e[31m%}%n:%{\e[01;32m%}%~%{\e[00m%}\n>'
 PATH="${HOME}/bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 PATH="/usr/local/bin:${PATH}"
-PATH="/Users/jeff/mongodb-osx-x86_64-1.8.1/bin:${PATH}"
+PATH=`echo ~/mongo*/bin`":${PATH}" #This is ugly and fragile
 export PATH
+
 export MANPATH="/opt/local/share/man:${MANPATH}"
 unset ROOTPATH
 export EDITOR=/usr/bin/vim
-export VISUAL="/Users/jeff/bin/mvim -f"
+export VISUAL="mvim -f"
 export HISTFILE=~/.hist 
 export SAVEHIST=5000
 export HISTSIZE=5000
@@ -119,6 +119,8 @@ alias mnt="mount |column -t"
 case `uname` in
   Darwin)
     alias l='ls -alFG'
+    PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+    export PATH
     ;;
   Linux)
     alias l='ls -alF --color=always'

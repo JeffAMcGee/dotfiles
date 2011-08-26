@@ -1,7 +1,7 @@
 #source /etc/zsh/zshrc
 
 export PS1=$'\n%{\e[31m%}%n:%{\e[01;32m%}%~%{\e[00m%}\n>'
-PATH="${HOME}/bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
+PATH="${HOME}/.bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:${PATH}"
 PATH=`echo ~/mongo*/bin`":${PATH}" #This is ugly and fragile
 export PATH
@@ -90,6 +90,7 @@ alias pag='ps -Af|grep '
 alias paf='ps -Af --forest '
 alias ap='ack --python'
 alias ah='ack --html'
+alias aph='ack --python --html'
 alias q='exit'
 alias rd='rmdir'
 alias v='mvim -o'

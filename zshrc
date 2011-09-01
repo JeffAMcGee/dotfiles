@@ -71,8 +71,6 @@ alias se='sudoedit'
 alias st='sudo tee'
 alias sk="sudo -H -u kde"
 alias ssh='ssh -2'
-alias sff='sftp nerd4christ@fitz.sourceforge.net'
-alias shf='ssh nerd4christ@fitz.sourceforge.net'
 alias ign='cat>/dev/null'
 alias -- +='pushd .'
 alias -- -='popd'
@@ -91,7 +89,9 @@ alias paf='ps -Af --forest '
 alias ap='ack --python'
 alias ah='ack --html'
 alias aph='ack --python --html'
-alias q='exit'
+alias gpum='git pull upstream master'
+alias gprum='git pull --rebase upstream master'
+alias gpo='git push origin'
 alias rd='rmdir'
 alias v='mvim -o'
 alias ipy='ipython2.6'
@@ -104,17 +104,12 @@ alias c4='chmod 644'
 alias c5='chmod 755'
 alias m='man'
 alias mmv="noglob mmv"
-alias mm..='mmv '\''*/*.jpg'\'' '\''#1_#2.jpg'\'
-alias mm...='mmv '\''*/*/*.jpg'\'' '\''#1_#3.jpg'\'
-alias mm01001='mmv '\''*/??.jpg'\'' '\''#1/0#2#3.jpg'\'
-alias mm101='mmv '\''*/?.jpg'\'' '\''#1/0#2.jpg'\'
 alias mm2nd='mmv '\''*/*/*'\'' '\''#1/#3'\'
 alias df='df -h'
 alias free='free -m'
 alias dums='du -ms *'
 alias anull='tr \\0 \\n'
 alias wg="wget"
-alias c="noglob calc"
 alias mnt="mount |column -t"
 
 case `uname` in
@@ -159,4 +154,12 @@ chpwd() {
 
 autoload -Uz compinit
 compinit
+
+if [ -f $HOME/.pullr.sh ] ; then
+    source $HOME/.pullr.sh
+fi
+
+if [ -f $HOME/.shrc_secret ] ; then
+    source $HOME/.shrc_secret
+fi
 

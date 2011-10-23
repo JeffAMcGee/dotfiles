@@ -9,7 +9,7 @@
 #
 # Create a local branch and run testcases:
 #
-#   pullr <pull-request-#> [ -d ]
+#   pullr <pull-request-#> [ -d | -s]
 #
 # If all the testcases pass, run "delp" to remove the pull request
 # branch.
@@ -62,16 +62,18 @@ function pullr {
     # and run testcases.  when finished, if all tests pass, optionally
     # remove the pull request branch.
     pullreq=${1?}
-    delpull=$2  # any value deletes pull request branch on passed tests
+    command=$2  # -s to skip tests, -d to delete branch after tests.
     (cd $(gitdir_top) &&  # git pulls has to be done at the top
         git co master &&  # make sure we're on master
         git pull $(git_upstream) master && # make sure we're up-to-date
         git pulls update &&
         out=$(gh fetch-pull $pullreq merge)
         echo "$out"
-        echo $out | fgrep -q CONFLICT || fab test)
+        if [[ $command != "-s" ]] ; then
+            echo $out | fgrep -q CONFLICT || fab test
+        fi)
     rc=$?
-    if [[ $rc -eq 0 ]] && [[ -n "$delpull" ]] ; then
+    if [[ $rc -eq 0 ]] && [[ "$command" == "-d" ]] ; then
         delp
         rc=$?
     fi

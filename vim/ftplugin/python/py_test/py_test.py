@@ -65,7 +65,7 @@ def _run_unittest(test, external, verbose=False):
     # and run asynchronously
     verbose_flag = '-s' if verbose else ''
     #command = 'python -m unittest %s%s' % (verbose_flag, test,)
-    command = 'nosetests -x %s %s' % (verbose_flag, test,)
+    command = 'source /Users/jeff/virtualenv/snoball/bin/activate && nosetests -x %s %s' % (verbose_flag, test,)
     #print command
     vim.command("silent compiler pyunit")
     vim.command("call RunCommand('%s', %d)" % (command, external))

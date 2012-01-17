@@ -113,6 +113,7 @@ alias dums='du -ms *'
 alias anull='tr \\0 \\n'
 alias wg="wget"
 alias mnt="mount |column -t"
+alias wos="workon snoball"
 
 case `uname` in
   Darwin)

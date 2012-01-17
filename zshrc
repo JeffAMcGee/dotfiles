@@ -18,7 +18,7 @@ export CLASSPATH="."
 export CVS_RSH=ssh
 export LESS="-R"
 export CLICOLOR_FORCE=1
-export JYTHON_HOME=/Users/jeff/jython
+#export JYTHON_HOME=/Users/jeff/jython
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
 
 setopt correctall
@@ -92,6 +92,8 @@ alias aph='ack --python --html'
 alias gpum='git pull upstream master'
 alias gprum='git pull --rebase upstream master'
 alias gpo='git push origin'
+alias gco='git checkout'
+alias gcam='git commit -am'
 alias rd='rmdir'
 alias v='mvim -o'
 alias ipy='ipython2.6'

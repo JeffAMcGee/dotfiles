@@ -31,3 +31,4 @@ vim/tags/*
 *.mov
 
 secrets
+ipython/profile_default

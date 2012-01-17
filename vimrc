@@ -69,6 +69,8 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 if has("gui_running")
+    set lines=100
+    set columns=81
 	set guifont=Inconsolata-dz:h12 guioptions-=T	guiheadroom=4
 endif
 colorscheme vj
@@ -139,14 +141,11 @@ augroup END
 let python_highlight_all = 1
 
 function! SuperCleverTab()
-  if pumvisible()
-    return "\<C-N>"
-  endif
     if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
         return "\<Tab>"
     else
-        if &omnifunc != ''
-            return "\<C-X>\<C-O>"
+        if &completefunc != ''
+            return "\<C-X>\<C-U>"
         elseif &dictionary != ''
             return "\<C-K>"
         else
@@ -154,8 +153,8 @@ function! SuperCleverTab()
         endif
     endif
 endfunction
-" inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 nmap <Tab> <C-R>=SuperCleverTab()<cr>
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 " trailing whitespace kills puppies
 highlight ExtraWhitespace ctermbg=red guibg=red

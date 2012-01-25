@@ -191,10 +191,5 @@ autocmd BufWinLeave * call clearmatches()
 
 " cscope goodness
 set tags=~/.vim/tags/snoball.tags,~/.vim/tags/tornado.tags,~/.vim/tags/mogo.tags
-set nocscopeverbose
-cs add ~/.vim/tags/snoball.cscope
-cs add ~/.vim/tags/tornado.cscope
-cs add ~/.vim/tags/mogo.cscope
-cs add ~/.vim/tags/python.cscope
 set cscopeverbose
 

@@ -10,7 +10,7 @@ export MANPATH="/opt/local/share/man:${MANPATH}"
 unset ROOTPATH
 export EDITOR=/usr/bin/vim
 export VISUAL="mvim -f"
-export HISTFILE=~/.hist 
+export HISTFILE=~/.hist
 export SAVEHIST=5000
 export HISTSIZE=5000
 export CDPATH=".:/Users/jeff/:/"
@@ -67,9 +67,6 @@ bindkey -v
 
 alias q="exit"
 alias s='sudo'
-alias se='sudoedit'
-alias st='sudo tee'
-alias sk="sudo -H -u kde"
 alias ssh='ssh -2'
 alias ign='cat>/dev/null'
 alias -- +='pushd .'
@@ -87,32 +84,25 @@ alias pa='ps -Af'
 alias pag='ps -Af|grep '
 alias paf='ps -Af --forest '
 alias ap='ack --python'
+
 alias ah='ack --html'
 alias aph='ack --python --html'
+
 alias gpum='git pull upstream master'
 alias gprum='git pull --rebase upstream master'
 alias gpo='git push origin'
 alias gco='git checkout'
 alias gcam='git commit -am'
+alias gitmv='nocorrect git mv'
+alias gcaa='git commit -a --amend'
+
 alias rd='rmdir'
 alias v='mvim -o'
-alias ipy='ipython2.6'
-alias g='grep'
-alias vmd='vimdiff'
-alias cz='suspend -f'
-alias c6='chmod 600'
-alias c7='chmod 700'
-alias c4='chmod 644'
-alias c5='chmod 755'
-alias m='man'
 alias mmv="noglob mmv"
-alias mm2nd='mmv '\''*/*/*'\'' '\''#1/#3'\'
 alias df='df -h'
 alias free='free -m'
 alias dums='du -ms *'
-alias anull='tr \\0 \\n'
 alias wg="wget"
-alias mnt="mount |column -t"
 alias wos="workon snoball"
 
 case `uname` in

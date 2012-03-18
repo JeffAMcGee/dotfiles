@@ -2,8 +2,7 @@
 
 export PS1=$'\n%{\e[31m%}%n:%{\e[01;32m%}%~%{\e[00m%}\n>'
 PATH="${HOME}/.bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
-PATH="/usr/local/bin:${PATH}"
-PATH=`echo ~/mymongo/bin`":${PATH}"
+PATH="${HOME}/mymongo/bin:/usr/local/bin:${PATH}"
 export PATH
 
 export MANPATH="/opt/local/share/man:${MANPATH}"

@@ -96,13 +96,12 @@ endif
 if has("gui_running")
     set lines=100
     set columns=81
-	set guifont=Inconsolata-dz:h12 guioptions-=T	guiheadroom=4
+	set guifont=Inconsolata-dz:h11 guioptions-=T	guiheadroom=4
 endif
 colorscheme vj
 
 set hlsearch
 
-" Only do this part when compiled with support for autocommands.
 if has("autocmd")
   "" *.md should be markdown
   autocmd BufRead,BufNewFile *.md set filetype=mkd
@@ -112,7 +111,7 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
- 
+
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=80
   autocmd FileType html,xhtml,htmldjango,javascript setlocal sw=2 ts=2 tw=80
@@ -127,9 +126,9 @@ if has("autocmd")
     \ endif
 endif " has("autocmd")
 
-augroup filetypedetect 
-  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
-augroup END 
+augroup filetypedetect
+  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
+augroup END
 
 "arrow keys for dvorak
 noremap d h
@@ -153,8 +152,6 @@ noremap <C-D> <C-W>h
 noremap <C-N> <C-W>l
 set winminheight=0
 
-
-set tags=tags;/
 set wrap
 
 " The next 50 lines or so were stolen from nod.

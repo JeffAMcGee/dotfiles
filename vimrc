@@ -72,10 +72,10 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
 
-if &term =~ "vt100" 
+if &term =~ "vt100"
 	if has("terminfo")
-		set t_Co=8                              
-		set t_Sf=[3%p1%dm 
+		set t_Co=8
+		set t_Sf=[3%p1%dm
 		set t_Sb=[4%p1%dm
 	else
 		set t_Co=8
@@ -104,6 +104,8 @@ set hlsearch
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
+  "" *.md should be markdown
+  autocmd BufRead,BufNewFile *.md set filetype=mkd
 
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,

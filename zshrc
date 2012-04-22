@@ -95,6 +95,8 @@ alias gcam='git commit -am'
 alias gitmv='nocorrect git mv'
 alias gcaa='git commit -a --amend'
 
+alias pj='python -mjson.tool'
+alias ns='nosetests -s'
 alias rd='rmdir'
 alias v='mvim -o'
 alias mmv="noglob mmv"

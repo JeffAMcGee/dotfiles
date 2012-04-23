@@ -7,3 +7,6 @@
 [submodule "vim/bundle/pydoc"]
 	path = vim/bundle/pydoc
 	url = https://github.com/fs111/pydoc.vim.git
+[submodule "vim-surround"]
+	path = vim-surround
+	url = https://github.com/tpope/vim-surround.git

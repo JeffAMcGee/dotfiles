@@ -52,13 +52,22 @@ set backspace=indent,eol,start
 set autoindent          " always set autoindenting on
 set nobackup            " don't keep a backup file
 set history=50          " keep 50 lines of command line history
+set scrolloff=5         " give me some context
 set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
+set ignorecase
+set smartcase
 
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set shortmess=atI
+
+" Bash-like filename completion
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.pyc,*.bak
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -104,6 +113,7 @@ endif
 colorscheme vj
 
 set hlsearch
+let g:pydoc_highlight=0
 
 if has("autocmd")
   "" *.md should be markdown

@@ -41,6 +41,9 @@ if has("python")
     endif
 endif
 
+filetype off
+" pathogen must be loaded without filetype
+call pathogen#infect()
 filetype plugin indent on
 
 " allow backspacing over everything in insert mode

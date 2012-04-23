@@ -31,3 +31,6 @@
 [submodule "vim/bundle/ropevim"]
 	path = vim/bundle/ropevim
 	url = https://github.com/sontek/rope-vim.git
+[submodule "vim/bundle/vim-indent-guides"]
+	path = vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git

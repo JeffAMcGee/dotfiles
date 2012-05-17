@@ -1,5 +1,4 @@
 #source /etc/zsh/zshrc
-
 export PS1=$'\n%{\e[31m%}%n:%{\e[01;32m%}%~%{\e[00m%}\n>'
 PATH="${HOME}/.bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="${HOME}/mymongo/bin:/usr/local/bin:${PATH}"
@@ -156,4 +155,3 @@ fi
 if [ -f $HOME/.shrc_secret ] ; then
     source $HOME/.shrc_secret
 fi
-

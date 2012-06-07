@@ -1,5 +1,13 @@
 #source /etc/zsh/zshrc
-export PS1=$'\n%{\e[31m%}%n:%{\e[01;32m%}%~%{\e[00m%}\n>'
+autoload colors; colors
+
+if [[ "${LOGNAME}" == "jeff" ]]
+then
+    export PS1=$'\n'"%{$fg[red]%}%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}"$'\n>'
+else
+    export PS1=$'\n'"%{$fg[blue]%}%n@%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}"$'\n>'
+fi
+
 PATH="${HOME}/.bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="${HOME}/mymongo/bin:/usr/local/bin:${PATH}"
 export PATH
@@ -127,11 +135,9 @@ fi
 vw=`which virtualenvwrapper.sh 2>/dev/null`
 if [[ -n "$vw" ]] ; then
     export PIP_RESPECT_VIRTUALENV=true
-    export WORKON_HOME=$HOME/virtualenv
     source "$vw"
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
 fi
-alias mve="mkvirtualenv --no-site-packages"
 
 #setterm -blength 0
 

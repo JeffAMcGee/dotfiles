@@ -31,7 +31,7 @@ EOF
     endif
 endfunction
 
-let defaultvirtualenv = $HOME . "/virtualenvs/snoball"
+let defaultvirtualenv = $HOME . "/virtualenvs/friendloc"
 
 " Only attempt to load this virtualenv if the defaultvirtualenv
 " actually exists, and we aren't running with a virtualenv active.
@@ -119,6 +119,11 @@ let g:pydoc_highlight=0
 map <leader>v <Plug>TaskList
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
+let g:syntastic_python_checker_args = '--ignore=E251,E231,E201,E225 --max-complexity=10'
+let g:surround_no_mappings = 1
+"au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
 
 if has("autocmd")
   "" *.md should be markdown
@@ -133,6 +138,7 @@ if has("autocmd")
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=80
   autocmd FileType html,xhtml,htmldjango,javascript setlocal sw=2 ts=2 tw=80
+
   "autocmd FileType c,cpp,php,perl setlocal foldmethod=indent foldminlines=5 foldnestmax=5
 
   " When editing a file, always jump to the last known cursor position.
@@ -156,6 +162,25 @@ noremap n l
 noremap j t
 noremap k d
 noremap l n
+
+" fix the shortcuts in the surround plugin for dvorak
+nmap ks  <Plug>Dsurround
+nmap cs  <Plug>Csurround
+nmap ys  <Plug>Ysurround
+nmap yS  <Plug>YSurround
+nmap yss <Plug>Yssurround
+nmap ySs <Plug>YSsurround
+nmap ySS <Plug>YSsurround
+xmap S   <Plug>VSurround
+xmap gS  <Plug>VgSurround
+if maparg('s', 'x') ==# ''
+  xnoremap <silent> s :<C-U>echoerr 'surround.vim: Visual mode s has been removed in favor of S'<CR>
+endif
+if !hasmapto("<Plug>Isurround","i") && "" == mapcheck("<C-S>","i")
+  imap    <C-S> <Plug>Isurround
+endif
+imap      <C-G>s <Plug>Isurround
+imap      <C-G>S <Plug>ISurround
 
 "swap forward and backward
 noremap <C-F> <C-B>
@@ -181,22 +206,6 @@ augroup mkd
 augroup END
 
 let python_highlight_all = 1
-
-function! SuperCleverTab()
-    if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-        return "\<Tab>"
-    else
-        if &completefunc != ''
-            return "\<C-X>\<C-U>"
-        elseif &dictionary != ''
-            return "\<C-K>"
-        else
-            return "\<C-N>"
-        endif
-    endif
-endfunction
-nmap <Tab> <C-R>=SuperCleverTab()<cr>
-inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 " trailing whitespace kills puppies
 highlight ExtraWhitespace ctermbg=red guibg=red

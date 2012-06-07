@@ -15,7 +15,6 @@ export PATH
 export MANPATH="/opt/local/share/man:${MANPATH}"
 unset ROOTPATH
 export EDITOR=/usr/bin/vim
-export VISUAL="mvim -f"
 export HISTFILE=~/.hist
 export SAVEHIST=5000
 export HISTSIZE=5000
@@ -89,8 +88,8 @@ alias o='less -r'
 alias pa='ps -Af'
 alias pag='ps -Af|grep '
 alias paf='ps -Af --forest '
-alias ap='ack --python'
 
+alias ap='ack --python'
 alias ah='ack --html'
 alias aph='ack --python --html'
 
@@ -104,23 +103,29 @@ alias gcaa='git commit -a --amend'
 
 alias pj='python -mjson.tool'
 alias ns='nosetests -s'
+alias nt='nosetests'
 alias rd='rmdir'
-alias v='mvim -o'
 alias mmv="noglob mmv"
 alias df='df -h'
 alias free='free -m'
 alias dums='du -ms *'
 alias wg="wget"
 alias wos="workon snoball"
+alias wof="workon friendloc"
+alias woc="workon crowdy"
 
 case `uname` in
   Darwin)
     alias l='ls -alFG'
     PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
     export PATH
+    export VISUAL="mvim -f"
+    alias v='mvim -o'
     ;;
   Linux)
     alias l='ls -alF --color=always'
+    export VISUAL="vim -f"
+    alias v='vim -o'
     ;;
 esac
 

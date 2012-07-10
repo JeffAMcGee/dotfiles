@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+import msgpack
+import ujson
+import fileinput
+import sys
+
+
+for line in fileinput.input():
+    d = ujson.loads(line.strip())
+    sys.stdout.write(msgpack.dumps(d))

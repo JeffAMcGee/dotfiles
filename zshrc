@@ -136,14 +136,7 @@ if [ -x /usr/games/fortune ] ; then
 	echo
 fi
 
-# python virtualenvwrapper
-# http://www.doughellmann.com/docs/virtualenvwrapper/
-vw=`which virtualenvwrapper.sh 2>/dev/null`
-if [[ -n "$vw" ]] ; then
-    export PIP_RESPECT_VIRTUALENV=true
-    source "$vw"
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-fi
+source `which virtualenvwrapper.sh`
 
 #setterm -blength 0
 

@@ -95,6 +95,7 @@ alias aph='ack --python --html'
 
 alias gpum='git pull upstream master'
 alias gprum='git pull --rebase upstream master'
+alias gprom='git pull --rebase origin master'
 alias gpo='git push origin'
 alias gco='git checkout'
 alias gcam='git commit -am'

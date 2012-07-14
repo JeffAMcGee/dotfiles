@@ -121,6 +121,9 @@ case `uname` in
     PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
     export PATH
     export VISUAL="mvim -f"
+    # make matplotlib cooperate
+    #export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
+    #export LDFLAGS="-L/usr/X11/lib"
     alias v='mvim -o'
     ;;
   Linux)

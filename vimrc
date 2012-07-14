@@ -31,7 +31,7 @@ EOF
     endif
 endfunction
 
-let defaultvirtualenv = $HOME . "/virtualenvs/friendloc"
+let defaultvirtualenv = $HOME . "/.virtualenvs/friendloc"
 
 " Only attempt to load this virtualenv if the defaultvirtualenv
 " actually exists, and we aren't running with a virtualenv active.

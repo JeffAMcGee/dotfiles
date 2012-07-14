@@ -16,5 +16,5 @@ Brew stuff
 ----------
 
 brew install ack dos2unix gfortran p7zip readline zeromq aspell jpeg pcre zsh
-brew install fortune pngcrush sqlite beanstalk unrar mmv wget
+brew install fortune pngcrush sqlite beanstalk unrar mmv wget pkg-config
 

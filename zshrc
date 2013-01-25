@@ -10,6 +10,7 @@ fi
 
 PATH="${HOME}/.bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="${HOME}/mymongo/bin:/usr/local/bin:${PATH}"
+PATH="/usr/local/share/npm/bin:${PATH}"
 export PATH
 
 export MANPATH="/opt/local/share/man:${MANPATH}"
@@ -102,6 +103,7 @@ alias gcam='git commit -am'
 alias gitmv='nocorrect git mv'
 alias gcaa='git commit -a --amend'
 
+alias pt="pdflatex -output-directory=out tamuthesis.tex"
 alias pj='python -mjson.tool'
 alias ns='nosetests -s'
 alias nt='nosetests'
@@ -112,7 +114,7 @@ alias free='free -m'
 alias dums='du -ms *'
 alias wg="wget"
 alias wos="workon snoball"
-alias wof="workon friendloc"
+alias wof="cd ~/friendloc; workon friendloc"
 alias woc="workon crowdy"
 
 case `uname` in

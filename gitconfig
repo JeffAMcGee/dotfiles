@@ -3,10 +3,10 @@
 	name = Jeff McGee
 
 [color]
-    diff = auto
-    branch = auto
-    status = auto
-    ui = auto
+	diff = auto
+	branch = auto
+	status = auto
+	ui = true
 
 [alias]
     lor = log origin/master..
@@ -21,11 +21,14 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
+
 [core]
 	excludesfile = /Users/jeff/.gitignore_global
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

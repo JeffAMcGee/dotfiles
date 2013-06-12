@@ -135,9 +135,9 @@ case `uname` in
     ;;
 esac
 
-if [ -x /usr/games/fortune ] ; then
+if [ -x /usr/local/bin/fortune ] ; then
 	echo
-	/usr/games/fortune
+	/usr/local/bin/fortune
 	echo
 fi
 

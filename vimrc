@@ -63,6 +63,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set shortmess=atI
+set diffopt=filler,vertical
 
 " Bash-like filename completion
 set wildmenu
@@ -136,7 +137,8 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=80
-  autocmd FileType html,xhtml,htmldjango,javascript setlocal sw=2 ts=2 tw=80
+  autocmd FileType html,xhtml,htmldjango,javascript setlocal sw=2 ts=2 tw=120
+  autocmd BufRead,BufNewFile *.bayou setfiletype bayou
 
   "autocmd FileType c,cpp,php,perl setlocal foldmethod=indent foldminlines=5 foldnestmax=5
 

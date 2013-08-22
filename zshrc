@@ -114,9 +114,8 @@ alias df='df -h'
 alias free='free -m'
 alias dums='du -ms *'
 alias wg="wget"
-alias wos="workon snoball"
+alias wos="cd ~/shopbot; workon shopbot"
 alias wof="cd ~/friendloc; workon friendloc"
-alias woc="workon crowdy"
 
 case `uname` in
   Darwin)

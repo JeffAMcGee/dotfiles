@@ -19,3 +19,8 @@ brew install ack dos2unix gfortran p7zip readline zeromq aspell jpeg pcre zsh
 brew install fortune pngcrush sqlite beanstalk unrar mmv wget pkg-config
 brew install phantomjs node pwgen python tmux
 
+Adding git pathogen repos
+-------------------------
+
+    cd ~/dotfiles
+    git submodule add git@github.com:derekwyatt/vim-scala.git vim/bundle/vim-scala

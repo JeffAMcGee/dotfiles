@@ -137,8 +137,10 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=80
-  autocmd FileType html,xhtml,htmldjango,javascript setlocal sw=2 ts=2 tw=120
+  autocmd FileType html,xhtml,htmldjango,javascript setlocal sw=2 ts=2 tw=100
+  autocmd FileType html,xhtml,htmldjango,javascript setlocal isk=@,48-57,_,192-255,-,$
   autocmd BufRead,BufNewFile *.bayou setfiletype bayou
+  autocmd BufRead,BufNewFile *.scala setfiletype scala
 
   "autocmd FileType c,cpp,php,perl setlocal foldmethod=indent foldminlines=5 foldnestmax=5
 

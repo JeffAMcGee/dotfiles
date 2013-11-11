@@ -90,6 +90,7 @@ alias pa='ps -Af'
 alias pag='ps -Af|grep '
 alias paf='ps -Af --forest '
 alias tmux='tmux -2 attach'
+alias bws="brunch w -s"
 
 alias ap='ack --python'
 alias ah='ack --html'

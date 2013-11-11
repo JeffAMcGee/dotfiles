@@ -123,6 +123,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:surround_no_mappings = 1
 "au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
+
 set completeopt=menuone,longest,preview
 
 if has("autocmd")
@@ -137,8 +138,9 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=80
-  autocmd FileType html,xhtml,htmldjango,javascript setlocal sw=2 ts=2 tw=100
-  autocmd FileType html,xhtml,htmldjango,javascript setlocal isk=@,48-57,_,192-255,-,$
+  autocmd FileType html,xhtml,htmldjango,javascript,emblem setlocal sw=2 ts=2 tw=100
+  autocmd FileType html,xhtml,htmldjango,javascript,emblem setlocal isk=@,48-57,_,192-255,-,$
+  autocmd FileType less,coffee setlocal sw=2 ts=2 tw=80
   autocmd BufRead,BufNewFile *.bayou setfiletype bayou
   autocmd BufRead,BufNewFile *.scala setfiletype scala
 
@@ -190,6 +192,9 @@ noremap <C-F> <C-B>
 noremap <C-B> <C-F>
 
 noremap <D-d> Oimport ipdb; ipdb.set_trace()<Esc>:w<Return>
+
+" quit quick
+command Q q
 
 "jump between windows
 noremap <C-H> <C-W>j<C-W>_

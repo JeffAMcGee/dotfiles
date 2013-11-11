@@ -122,10 +122,10 @@ highlight Operator gui=None guifg=#e8cdc0 guibg=bg
 highlight Keyword gui=bold guifg=grey guibg=bg
 highlight Exception gui=bold guifg=#d0a8ad guibg=bg
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-"hi IndentGuidesOdd  guibg=#181b27 ctermbg=black
-"hi IndentGuidesEven guibg=#08090d ctermbg=black
-hi IndentGuidesOdd  guibg=#0f1018 ctermbg=black
-hi IndentGuidesEven guibg=#15161e ctermbg=black
+hi IndentGuidesOdd guibg=#08090d ctermbg=black
+hi IndentGuidesEven  guibg=#181b27 ctermbg=black
+"hi IndentGuidesOdd  guibg=#0f1018 ctermbg=black
+"hi IndentGuidesEven guibg=#15161e ctermbg=black
 "end syntax highlighting """""""""""""""""""""""""""""""""""""
 
 " highlight groups

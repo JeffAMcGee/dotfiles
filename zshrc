@@ -10,6 +10,7 @@ fi
 
 PATH="${HOME}/.bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="${HOME}/mymongo/bin:/usr/local/bin:${PATH}"
+PATH="${HOME}/myphantomjs/bin:${PATH}"
 PATH="/usr/local/share/npm/bin:${PATH}"
 export PATH
 

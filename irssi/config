@@ -1,0 +1,80 @@
+servers = (
+  {
+    chatnet = "zipf";
+    address = "irc.zipfworks.com";
+    port = "6697";
+    use_ssl = "yes";
+    autoconnect = "true";
+    name = "zipf";
+  },
+  {
+    chatnet = "33ad";
+    address = "irc.33ad.org";
+    port = "6697";
+    use_ssl = "yes";
+    autoconnect = "true";
+    name = "33ad";
+  }
+);
+
+aliases = {
+  J = "join";
+  WJOIN = "join -window";
+  WQUERY = "query -window";
+  LEAVE = "part";
+  BYE = "quit";
+  EXIT = "quit";
+  SIGNOFF = "quit";
+  DESCRIBE = "action";
+  DATE = "time";
+  HOST = "userhost";
+  LAST = "lastlog";
+  SAY = "msg *";
+  WI = "whois";
+  WII = "whois $0 $0";
+  WW = "whowas";
+  W = "who";
+  N = "names";
+  M = "msg";
+  T = "topic";
+  C = "clear";
+  CL = "clear";
+  K = "kick";
+  KB = "kickban";
+  KN = "knockout";
+  BANS = "ban";
+  B = "ban";
+  MUB = "unban *";
+  UB = "unban";
+  IG = "ignore";
+  UNIG = "unignore";
+  SB = "scrollback";
+  UMODE = "mode $N";
+  WC = "window close";
+  WN = "window new hide";
+  SV = "say Irssi $J ($V) - http://irssi.org/";
+  GOTO = "sb goto";
+  CHAT = "dcc chat";
+  RUN = "SCRIPT LOAD";
+  CALC = "exec - if command -v bc >/dev/null 2>&1\\; then printf '%s=' '$*'\\; echo '$*' | bc -l\\; else echo bc was not found\\; fi";
+  SBAR = "STATUSBAR";
+  INVITELIST = "mode $C +I";
+  Q = "QUERY";
+  "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
+  EXEMPTLIST = "mode $C +e";
+  ATAG = "WINDOW SERVER";
+  UNSET = "set -clear";
+  RESET = "set -default";
+};
+
+settings = {
+  core = { real_name = ""; user_name = "jeff"; nick = "jeff"; };
+  "fe-text" = { actlist_sort = "refnum"; };
+};
+chatnets = { 33ad = { type = "IRC"; }; zipf = { type = "IRC"; }; };
+channels = (
+  { name = "#33ad"; chatnet = "33ad"; autojoin = "yes"; },
+  { name = "#dev"; chatnet = "zipf"; autojoin = "yes"; },
+  { name = "#dev-bot"; chatnet = "zipf"; autojoin = "yes"; },
+  { name = "#dev-ci"; chatnet = "zipf"; autojoin = "yes"; },
+);

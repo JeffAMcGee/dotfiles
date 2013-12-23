@@ -1,0 +1,4 @@
+#!/usr/bin/perl -w
+use strict;
+my @res = eval(join(' ',@ARGV)) or die $@;
+print(join("\n",@res)."\n");

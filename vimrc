@@ -109,7 +109,7 @@ endif
 if has("gui_running")
     set lines=100
     set columns=81
-	set guifont=Inconsolata-dz:h11 guioptions-=T	guiheadroom=4
+	set guifont=Inconsolata-dz:h11 guioptions-=T guiheadroom=4
 endif
 colorscheme vj
 

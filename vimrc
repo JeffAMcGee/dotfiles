@@ -196,6 +196,10 @@ noremap <D-d> Oimport ipdb; ipdb.set_trace()<Esc>:w<Return>
 " quit quick
 command Q q
 
+" use a usb foot pedal to enter and exit insert mode
+nnoremap <MiddleMouse> i
+inoremap <MiddleRelease> <Esc>
+
 "jump between windows
 noremap <C-H> <C-W>j<C-W>_
 noremap <C-T> <C-W>k<C-W>_

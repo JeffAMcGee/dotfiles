@@ -192,6 +192,8 @@ imap      <C-G>S <Plug>ISurround
 noremap <C-F> <C-B>
 noremap <C-B> <C-F>
 
+" show nerd tree
+noremap <C-U> :NERDTreeToggle<CR>
 
 " quit quick
 command Q q

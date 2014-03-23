@@ -74,7 +74,11 @@ settings = {
 chatnets = { 33ad = { type = "IRC"; }; zipf = { type = "IRC"; }; };
 channels = (
   { name = "#33ad"; chatnet = "33ad"; autojoin = "yes"; },
+  { name = "#snodevs"; chatnet = "33ad"; autojoin = "yes"; },
   { name = "#dev"; chatnet = "zipf"; autojoin = "yes"; },
-  { name = "#dev-bot"; chatnet = "zipf"; autojoin = "yes"; },
-  { name = "#dev-ci"; chatnet = "zipf"; autojoin = "yes"; },
+  { name = "#dev-bot"; chatnet = "zipf"; autojoin = "yes"; }
+  { name = "#dev-ci"; chatnet = "zipf"; autojoin = "yes"; }
+);
+ignores = (
+  { level = "JOINS PARTS QUITS MODES"; channels = ( "#dev" ); }
 );

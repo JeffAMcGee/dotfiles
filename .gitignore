@@ -14,6 +14,8 @@ build
 vim/.netrwhist
 vim/tags/*
 
+bin/chromedriver
+
 *.pbxuser
 *.perspective
 *.perspectivev3

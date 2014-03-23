@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+pipe(READ,WRITE); 
+defined(my $pid=fork) or die "Can't fork : $!";
+
+if($pid==0) {
+    $|=1;
+    close READ or die "can't #close READ after fork : $!"; 
+    open STDOUT,">&WRITE" or die "Can't open pipe for writing : $!";
+    system "ls","-lFR","--color=always",@ARGV;
+    close WRITE or die "Can't #close pipe WRITE : $!";
+    exit;
+} else {
+    close WRITE or die "can't #close WRITE after fork : $!";
+    open STDIN,"<&READ" or die "Can't open pipe for reading : $!";
+    system "less","-R","-";
+    close READ or die "Can't #close pipe READ : $!";
+    exit;
+}

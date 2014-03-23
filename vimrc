@@ -56,8 +56,8 @@ set scrolloff=5         " give me some context
 set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
-set ignorecase
-set smartcase
+"set ignorecase
+"set smartcase
 
 set tabstop=4
 set shiftwidth=4
@@ -109,7 +109,7 @@ endif
 if has("gui_running")
     set lines=100
     set columns=81
-	set guifont=Inconsolata-dz:h11 guioptions-=T	guiheadroom=4
+	set guifont=Inconsolata-dz:h11 guioptions-=T guiheadroom=4
 endif
 colorscheme vj
 
@@ -143,7 +143,8 @@ if has("autocmd")
   autocmd FileType less,coffee setlocal sw=2 ts=2 tw=80
   autocmd BufRead,BufNewFile *.bayou setfiletype bayou
   autocmd BufRead,BufNewFile *.scala setfiletype scala
-
+  autocmd FileType html,xhtml,htmldjango,javascript,emblem,coffee noremap <D-d> Odebugger<Esc>:w<Return>
+  autocmd FileType python noremap <D-d> Oimport ipdb; ipdb.set_trace()<Esc>:w<Return>
   "autocmd FileType c,cpp,php,perl setlocal foldmethod=indent foldminlines=5 foldnestmax=5
 
   " When editing a file, always jump to the last known cursor position.
@@ -191,10 +192,15 @@ imap      <C-G>S <Plug>ISurround
 noremap <C-F> <C-B>
 noremap <C-B> <C-F>
 
-noremap <D-d> Oimport ipdb; ipdb.set_trace()<Esc>:w<Return>
+" show nerd tree
+noremap <C-U> :NERDTreeToggle<CR>
 
 " quit quick
 command Q q
+
+" use a usb foot pedal to enter and exit insert mode
+nnoremap <MiddleMouse> a
+inoremap <MiddleRelease> <Esc>
 
 "jump between windows
 noremap <C-H> <C-W>j<C-W>_

@@ -124,6 +124,8 @@ let g:surround_no_mappings = 1
 "au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
+let g:syntastic_python_pylint_args='--disable=C0111,W0142,R --msg-template="{path}:{line}: [{msg_id}] {msg}" -r n'
+
 set completeopt=menuone,longest,preview
 
 if has("autocmd")
@@ -194,6 +196,10 @@ noremap <C-B> <C-F>
 
 " show nerd tree
 noremap <C-U> :NERDTreeToggle<CR>
+
+" format newlines
+noremap \n :%s/\\n/<C-V><C-M>/g<CR>
+noremap \, :%s/, /,<C-V><C-M>/g<CR>
 
 " quit quick
 command Q q

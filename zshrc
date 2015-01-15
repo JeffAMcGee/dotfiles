@@ -26,6 +26,7 @@ export CVS_RSH=ssh
 export LESS="-R"
 export CLICOLOR_FORCE=1
 #export JYTHON_HOME=/Users/jeff/jython
+export GOPATH=~/.go
 
 setopt correctall
 setopt share_history
@@ -117,6 +118,7 @@ alias dums='du -ms *'
 alias wg="wget"
 alias wos="cd ~/shopbot; workon shopbot"
 alias wof="cd ~/friendloc; workon friendloc"
+alias gorun="go run *.go~*_test.go"
 
 case `uname` in
   Darwin)
@@ -129,6 +131,8 @@ case `uname` in
     #export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
     #export LDFLAGS="-L/usr/X11/lib"
     alias v='mvim -o'
+    export CGO_CFLAGS="-I/usr/local/include"
+    export CGO_LDFLAGS="-L/usr/local/lib"
     ;;
   Linux)
     alias l='ls -alF --color=always'

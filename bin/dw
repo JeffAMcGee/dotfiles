@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import random
+
+# nod's diceware script. I rewrote it to add bugs.
+
+def choose_words(rand, word_count):
+    words = os.environ['HOME'] + "/.bin/words.txt"
+    with open(words) as words_file:
+        dwlist = list(words_file.readlines())
+    return [rand.choice(dwlist).strip() for x in xrange(word_count)]
+
+def gen_phrase(word_count):
+    rand = random.SystemRandom()
+    words = choose_words(rand,word_count-1)
+    index = rand.randrange(0,word_count)
+    number = str(random.randrange(100,1000))
+    words.insert(index,number)
+    return rand.choice('-_.,/').join(words)
+
+if __name__ == '__main__':
+    if len(sys.argv)==2:
+        print gen_phrase(int(sys.argv[1]))
+    else:
+        print gen_phrase(4)

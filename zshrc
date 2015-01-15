@@ -26,7 +26,6 @@ export CVS_RSH=ssh
 export LESS="-R"
 export CLICOLOR_FORCE=1
 #export JYTHON_HOME=/Users/jeff/jython
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
 export GOPATH=~/.go
 
 setopt correctall
@@ -127,6 +126,7 @@ case `uname` in
     PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
     export PATH
     export VISUAL="mvim -f"
+    export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
     # make matplotlib cooperate
     #export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
     #export LDFLAGS="-L/usr/X11/lib"

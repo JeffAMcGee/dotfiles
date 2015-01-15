@@ -9,7 +9,9 @@ inspired by aniero's fu. (http://github.com/aniero/dotfiles)
 use it
 ------
 
- `python install.py`
+    python install.py
+    git submodule init
+    git submodule update
 
 
 Brew stuff

@@ -148,6 +148,7 @@ if has("autocmd")
   autocmd FileType html,xhtml,htmldjango,javascript,emblem,coffee noremap <D-d> Odebugger<Esc>:w<Return>
   autocmd FileType python noremap <D-d> Oimport ipdb; ipdb.set_trace()<Esc>:w<Return>
   "autocmd FileType c,cpp,php,perl setlocal foldmethod=indent foldminlines=5 foldnestmax=5
+  autocmd FileType go set noexpandtab
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler

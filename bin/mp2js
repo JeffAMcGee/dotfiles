@@ -2,19 +2,31 @@
 import sys
 import msgpack
 import ujson
+import gzip
 
 
 def mp2js(f):
-    for r in msgpack.Unpacker(f):
+    for r in msgpack.Unpacker(f,use_list=False):
         print ujson.dumps(r)
 
 
 def main(argv):
-    files = argv[1:] if len(argv)>1 else ['-']
+    unzip = False
+    if len(argv)>1:
+        if argv[1]=='-z':
+            unzip = True
+            files = argv[2:]
+        else:
+            files = argv[1:]
+    else:
+        files = ['-']
 
     for filename in files:
         if filename=='-':
             mp2js(sys.stdin)
+        elif zip:
+            with gzip.open(filename) as f:
+                mp2js(f)
         else:
             with open(filename) as f:
                 mp2js(f)

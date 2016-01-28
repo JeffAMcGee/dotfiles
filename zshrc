@@ -11,6 +11,7 @@ fi
 PATH="${HOME}/.bin:${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="${HOME}/mymongo/bin:/usr/local/bin:${PATH}"
 PATH="${HOME}/myphantomjs/bin:${PATH}"
+PATH="${HOME}/.go/bin:${PATH}"
 PATH="/usr/local/share/npm/bin:${PATH}"
 export PATH
 
@@ -26,7 +27,7 @@ export CVS_RSH=ssh
 export LESS="-R"
 export CLICOLOR_FORCE=1
 #export JYTHON_HOME=/Users/jeff/jython
-export GOPATH=~/.go
+export GOPATH=~/hp/invert
 
 setopt correctall
 setopt share_history
@@ -126,7 +127,7 @@ case `uname` in
     PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
     export PATH
     export VISUAL="mvim -f"
-    export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
+    export JAVA_HOME=$(/usr/libexec/java_home)
     # make matplotlib cooperate
     #export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
     #export LDFLAGS="-L/usr/X11/lib"

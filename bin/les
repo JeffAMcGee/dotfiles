@@ -9,7 +9,7 @@ if($pid==0) {
     $|=1;
     close READ or die "can't #close READ after fork : $!"; 
     open STDOUT,">&WRITE" or die "Can't open pipe for writing : $!";
-    system "ls","-lFR","--color=always",@ARGV;
+    system "ls","-lFRG",@ARGV;
     close WRITE or die "Can't #close pipe WRITE : $!";
     exit;
 } else {

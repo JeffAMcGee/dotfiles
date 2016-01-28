@@ -142,7 +142,7 @@ if has("autocmd")
   autocmd FileType text setlocal textwidth=80
   autocmd FileType html,xhtml,htmldjango,javascript,emblem setlocal sw=2 ts=2 tw=100
   autocmd FileType html,xhtml,htmldjango,javascript,emblem setlocal isk=@,48-57,_,192-255,-,$
-  autocmd FileType less,coffee setlocal sw=2 ts=2 tw=80
+  autocmd FileType less,coffee,jade,json setlocal sw=2 ts=2 tw=80
   autocmd BufRead,BufNewFile *.bayou setfiletype bayou
   autocmd BufRead,BufNewFile *.scala setfiletype scala
   autocmd FileType html,xhtml,htmldjango,javascript,emblem,coffee noremap <D-d> Odebugger<Esc>:w<Return>

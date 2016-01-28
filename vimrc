@@ -116,13 +116,14 @@ colorscheme vj
 set hlsearch
 
 " plugin options
-let g:pydoc_highlight=0
 map <leader>v <Plug>TaskList
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:surround_no_mappings = 1
 "au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
+nnoremap <D-z> :GundoToggle<CR>
+
 
 let g:syntastic_python_pylint_args='--disable=C0111,W0142,R --msg-template="{path}:{line}: [{msg_id}] {msg}" -r n'
 

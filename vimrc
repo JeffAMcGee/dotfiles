@@ -122,6 +122,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:surround_no_mappings = 1
 "au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
+let g:jsx_ext_required = 0
 nnoremap <D-z> :GundoToggle<CR>
 
 

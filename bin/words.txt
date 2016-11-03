@@ -132,7 +132,7 @@ aiken
 ail
 aile
 aim
-ain't
+aint
 ainu
 air
 aires
@@ -380,7 +380,6 @@ askew
 asleep
 aspen
 aspire
-ass
 assai
 assam
 assay
@@ -703,7 +702,6 @@ birth
 bison
 bisque
 bit
-bitch
 bite
 bitt
 bitten
@@ -1006,7 +1004,6 @@ but
 butane
 butch
 buteo
-butt
 butte
 butyl
 buxom
@@ -1337,7 +1334,6 @@ cobble
 cobol
 cobra
 coca
-cock
 cockle
 cocky
 coco
@@ -5115,7 +5111,6 @@ pus
 pusan
 pusey
 push
-pussy
 put
 putt
 putty
@@ -6229,7 +6224,6 @@ suave
 sub
 subtly
 such
-suck
 sud
 sudan
 suds

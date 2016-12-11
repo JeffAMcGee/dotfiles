@@ -19,8 +19,8 @@ export MANPATH="/opt/local/share/man:${MANPATH}"
 unset ROOTPATH
 export EDITOR=/usr/bin/vim
 export HISTFILE=~/.hist
-export SAVEHIST=5000
-export HISTSIZE=5000
+export SAVEHIST=50000
+export HISTSIZE=50000
 export CDPATH=".:/Users/jeff/:/"
 export CLASSPATH="."
 export CVS_RSH=ssh
@@ -28,6 +28,7 @@ export LESS="-R"
 export CLICOLOR_FORCE=1
 #export JYTHON_HOME=/Users/jeff/jython
 export GOPATH=~/hp/invert
+export VERTICAINI=~/.vertica.ini
 
 setopt correctall
 setopt share_history
@@ -120,6 +121,7 @@ alias wg="wget"
 alias wos="cd ~/shopbot; workon shopbot"
 alias wof="cd ~/friendloc; workon friendloc"
 alias gorun="go run *.go~*_test.go"
+alias procyon="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/bin/java -jar ~/procyon-decompiler-0.5.30.jar"
 
 case `uname` in
   Darwin)

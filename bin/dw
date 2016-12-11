@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 
 import os
 import sys
@@ -10,7 +11,7 @@ def choose_words(rand, word_count):
     words = os.environ['HOME'] + "/.bin/words.txt"
     with open(words) as words_file:
         dwlist = list(words_file.readlines())
-    return [rand.choice(dwlist).strip() for x in xrange(word_count)]
+    return [rand.choice(dwlist).strip() for x in range(word_count)]
 
 def gen_phrase(word_count):
     rand = random.SystemRandom()
@@ -22,6 +23,6 @@ def gen_phrase(word_count):
 
 if __name__ == '__main__':
     if len(sys.argv)==2:
-        print gen_phrase(int(sys.argv[1]))
+        print(gen_phrase(int(sys.argv[1])))
     else:
-        print gen_phrase(4)
+        print(gen_phrase(4))

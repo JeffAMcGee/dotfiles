@@ -46,6 +46,8 @@ filetype off
 call pathogen#infect()
 filetype plugin indent on
 
+set directory=$HOME/.vim/swapfiles//
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -173,6 +175,9 @@ noremap n l
 noremap j t
 noremap k d
 noremap l n
+
+" FIXME: broke
+cnorea vls topleft vsplit
 
 " fix the shortcuts in the surround plugin for dvorak
 nmap ks  <Plug>Dsurround

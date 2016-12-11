@@ -1,5 +1,4 @@
 --ignore-dir=node_modules/
---ignore-dir=bower_components/
 --ignore-dir=public/
---ignore-dir=shopbot/data/
---ignore-dir=shopbot/pages/
+--ignore-dir=target/
+--ignore-dir=build/

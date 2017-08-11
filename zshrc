@@ -36,6 +36,7 @@ setopt hist_ignore_dups
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt no_hist_beep
 setopt no_beep
+setopt nullglob
 setopt dvorak
 setopt autocd
 setopt brace_ccl
@@ -122,6 +123,7 @@ alias wos="cd ~/shopbot; workon shopbot"
 alias wof="cd ~/friendloc; workon friendloc"
 alias gorun="go run *.go~*_test.go"
 alias procyon="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/bin/java -jar ~/procyon-decompiler-0.5.30.jar"
+eval "$(thefuck --alias F)"
 
 case `uname` in
   Darwin)
@@ -130,12 +132,14 @@ case `uname` in
     export PATH
     export VISUAL="mvim -f"
     export JAVA_HOME=$(/usr/libexec/java_home)
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
     # make matplotlib cooperate
     #export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
     #export LDFLAGS="-L/usr/X11/lib"
     alias v='mvim -o'
-    export CGO_CFLAGS="-I/usr/local/include"
-    export CGO_LDFLAGS="-L/usr/local/lib"
+    #export CGO_CFLAGS="-I/usr/local/include"
+    #export CGO_LDFLAGS="-L/usr/local/lib"
     ;;
   Linux)
     alias l='ls -alF --color=always'
@@ -150,6 +154,7 @@ if [ -x /usr/local/bin/fortune ] ; then
 	echo
 fi
 
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source `which virtualenvwrapper.sh`
 
 #setterm -blength 0
@@ -174,3 +179,5 @@ fi
 if [ -f $HOME/.shrc_secret ] ; then
     source $HOME/.shrc_secret
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

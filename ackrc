@@ -2,3 +2,4 @@
 --ignore-dir=public/
 --ignore-dir=target/
 --ignore-dir=build/
+--ignore-dir=dist/
